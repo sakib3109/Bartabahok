@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="700.0" prefWidth="450.0" styleClass="root" stylesheets="@styles.css" xmlns="http.com/javafx/19" xmlns:fx="http.com/fxml/1" fx:controller="DashboardController">
+   <top>
+      <VBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets bottom="10.0" left="15.0" right="15.0" top="20.0" />
+         </padding>
+         <children>
+            <Label fx:id="welcomeLabel" styleClass="title-label" text="Welcome!" />
+            <TextField fx:id="searchField" promptText="Search everything..." styleClass="search-field" />
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <!-- ADDED fx:id="tabPane" HERE -->
+      <TabPane fx:id="tabPane" styleClass="tab-pane" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+         <tabs>
+            <Tab text="Groups">
+               <content>
+                  <VBox spacing="5.0" style="-fx-padding: 10px;">
+                     <children>
+                        <ListView fx:id="groupsListView" styleClass="list-view" VBox.vgrow="ALWAYS" />
+                        <HBox fx:id="groupActionBox" alignment="CENTER" spacing="10.0" managed="false" visible="false">
+                           <children>
+                              <Button fx:id="joinGroupButton" onAction="#handleJoinGroupButton" styleClass="button-login" text="Join" />
+                              <Button fx:id="enterChatButton" onAction="#handleEnterChatButton" styleClass="button-login" text="Enter Chat" />
+                              <Button fx:id="leaveGroupButton" onAction="#handleLeaveGroupButton" styleClass="button-leave" text="Leave" />
+                           </children>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </content>
+            </Tab>
+            <Tab text="Online Users">
+               <content>
+                  <ListView fx:id="onlineUsersListView" styleClass="list-view" />
+               </content>
+            </Tab>
+            <Tab text="All Users">
+               <content>
+                  <ListView fx:id="allUsersListView" styleClass="list-view" />
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </center>
+   <bottom>
+      <VBox alignment="CENTER" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="createGroupButton" mnemonicParsing="false" onAction="#handleCreateGroupButton" styleClass="button-login" text="Create New Group" />
+         </children>
+         <padding>
+            <Insets bottom="20.0" top="5.0" />
+         </padding>
+      </VBox>
+   </bottom>
+</BorderPane>

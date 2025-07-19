@@ -1,0 +1,20 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Main",
+      "request": "launch",
+      "mainClass": "Main",
+      "projectName": "Bartabahok_6c1bd7bf"
+    },
+    {
+      "type": "java",
+      "name": "Run Bartabahok",
+      "request": "launch",
+      "mainClass": "Main",
+      "projectName": "Bartabahok",
+      "vmArgs": "--module-path \"D:/3-1/Sakib/openjfx-24.0.1_windows-x64_bin-sdk/javafx-sdk-24.0.1/lib\" --add-modules javafx.controls,javafx.fxml,javafx.media"
+    }
+  ]
+}
